@@ -41,6 +41,25 @@ specify init my-project --integration copilot
 >
 > **Windows note:** Offline scaffolding requires PowerShell 7+ (`pwsh`), not Windows PowerShell 5.x (`powershell.exe`). Install from <https://aka.ms/powershell>.
 
+## Component catalogs and sources
+
+Built-in integrations and bundled components remain available without network
+access. Catalog-based installation of additional extensions, presets,
+workflows, workflow steps, and bundles needs both the catalog metadata and the
+referenced release artifacts. A supported direct or local source install does
+not require catalog metadata.
+
+For a restricted network that can reach approved internal services, host
+reviewed catalogs and artifacts on internal HTTPS endpoints, then register each
+component-specific source with its `catalog add` command. For a fully
+disconnected network, transfer reviewed component artifacts through your
+approved process and install them from their supported direct or local source
+instead of relying on an unreachable remote catalog.
+
+See the [Catalogs reference](../reference/catalogs.md) for catalog types, trust
+policies, and source precedence. If internal endpoints require credentials,
+also configure [Authentication](../reference/authentication.md).
+
 ## Git Credential Manager on Linux
 
 If you're having issues with Git authentication on Linux, you can install Git Credential Manager:
